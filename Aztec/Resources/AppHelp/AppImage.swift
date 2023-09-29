@@ -35,4 +35,6 @@ enum AppImage: String, AppImageProtocol {
     // MARK: - AppImage
     
     case background
+    case aztecLogo
+    case splashLoading
 }
