@@ -37,6 +37,7 @@ enum AppImage: String, AppImageProtocol {
     case backNavigationButton
     case coinWallet
     case background
+    case backgroundAlpha
     case aztecLogo
     case splashLoading
     
@@ -46,4 +47,9 @@ enum AppImage: String, AppImageProtocol {
     case fourButton
     case infoButton
     case settingsButton
+    
+    // MARK: - Info
+    
+    case rulesImage
+    case infoImage
 }

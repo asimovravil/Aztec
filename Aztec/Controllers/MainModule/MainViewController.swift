@@ -12,6 +12,9 @@ final class MainViewController: UIViewController {
     
     // MARK: - UI
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = AppImage.background.uiImage
@@ -51,6 +54,7 @@ final class MainViewController: UIViewController {
     private lazy var infoButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.infoButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -74,8 +78,10 @@ final class MainViewController: UIViewController {
     
     private func setupViews() {
         [backgroundView, coinWalletImage, aztecLogoImage, playButton, fourButton, infoButton, settingsButton].forEach() {
-            view.addSubview($0)
+            contentView.addSubview($0)
         }
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
     }
     
     // MARK: - setupConstraints
@@ -84,14 +90,22 @@ final class MainViewController: UIViewController {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        contentView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(view)
+        }
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         aztecLogoImage.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(59)
-            make.trailing.equalToSuperview().offset(-59)
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
         }
         playButton.snp.makeConstraints { make in
+            make.top.equalTo(aztecLogoImage.snp.bottom).offset(97)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-224)
+            make.bottom.equalTo(infoButton.snp.top).offset(-70)
         }
         fourButton.snp.makeConstraints { make in
             make.top.equalTo(playButton.snp.bottom).offset(70)
@@ -113,6 +127,13 @@ final class MainViewController: UIViewController {
         let coinWalletBarButtonItem = UIBarButtonItem(customView: coinWalletImage)
         navigationItem.rightBarButtonItem = coinWalletBarButtonItem
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func infoButtonTapped() {
+        let controller = InfoViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
