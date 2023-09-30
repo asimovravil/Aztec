@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1C65D1D2AC8432A00E414BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D1C2AC8432A00E414BE /* MainViewController.swift */; };
+		F1C65D1F2AC8452E00E414BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1C65D1E2AC8452E00E414BE /* GoogleService-Info.plist */; };
 		F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */; };
 		F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */; };
 		F1CA3EEA2AC6B5F100452810 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE92AC6B5F100452810 /* SplashViewController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1C65D1C2AC8432A00E414BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F1C65D1E2AC8452E00E414BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1CA3EE22AC6B5F100452810 /* Aztec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aztec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1C65D1B2AC8430900E414BE /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C65D1C2AC8432A00E414BE /* MainViewController.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
 		F1CA3ED92AC6B5F100452810 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CA3F552AC6BF1B00452810 /* SplashScreen */,
+				F1C65D1B2AC8430900E414BE /* MainModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +205,7 @@
 		F1CA3EFE2AC6B6DC00452810 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F1C65D1E2AC8452E00E414BE /* GoogleService-Info.plist */,
 				F1CA3EF32AC6B5F300452810 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -331,6 +345,7 @@
 				F1CA3F192AC6BAA200452810 /* Poppins-SemiBold.ttf in Resources */,
 				F1CA3EF22AC6B5F300452810 /* LaunchScreen.storyboard in Resources */,
 				F1CA3F182AC6BAA200452810 /* Poppins-Medium.ttf in Resources */,
+				F1C65D1F2AC8452E00E414BE /* GoogleService-Info.plist in Resources */,
 				F1CA3EEF2AC6B5F300452810 /* Assets.xcassets in Resources */,
 				F1CA3F142AC6BAA200452810 /* Poppins-Thin.ttf in Resources */,
 			);
@@ -349,6 +364,7 @@
 				F1CA3F1D2AC6BD8000452810 /* AppStorage .swift in Sources */,
 				F1CA3F542AC6BEB700452810 /* ExternalService.swift in Sources */,
 				F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */,
+				F1C65D1D2AC8432A00E414BE /* MainViewController.swift in Sources */,
 				F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */,
 				F1CA3F1B2AC6BD5C00452810 /* LoadingViewController.swift in Sources */,
 			);

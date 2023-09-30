@@ -34,7 +34,16 @@ enum AppImage: String, AppImageProtocol {
     
     // MARK: - AppImage
     
+    case backNavigationButton
+    case coinWallet
     case background
     case aztecLogo
     case splashLoading
+    
+    // MARK: - Main
+    
+    case playButton
+    case fourButton
+    case infoButton
+    case settingsButton
 }
