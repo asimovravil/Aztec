@@ -65,16 +65,16 @@ final class SplashViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         aztecLogoImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(93)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview().offset(59)
             make.trailing.equalToSuperview().offset(-59)
         }
         splashLoadingImage.snp.makeConstraints { make in
-            make.bottom.equalTo(splashLabel.snp.top).offset(-32)
+            make.top.equalTo(aztecLogoImage.snp.bottom).offset(160)
             make.centerX.equalToSuperview()
         }
         splashLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-144)
+            make.top.equalTo(splashLoadingImage.snp.bottom).offset(32)
             make.centerX.equalToSuperview()
         }
     }
@@ -87,4 +87,3 @@ final class SplashViewController: UIViewController {
         }, completion: nil)
     }
 }
-
