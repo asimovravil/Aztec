@@ -12,6 +12,7 @@ final class MainTableViewCell: UITableViewCell {
 
     static let reuseID = String(describing: MainTableViewCell.self)
     var infoButtonTappedHandler: (() -> Void)?
+    var settingsButtonTappedHandler: (() -> Void)?
 
     // MARK: - UI
     
@@ -45,6 +46,8 @@ final class MainTableViewCell: UITableViewCell {
     private lazy var settingsButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.settingsButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
+
         return button
     }()
     
@@ -100,5 +103,9 @@ final class MainTableViewCell: UITableViewCell {
     
     @objc private func infoButtonTapped() {
         infoButtonTappedHandler?()
+    }
+    
+    @objc private func settingsButtonTapped() {
+        settingsButtonTappedHandler?()
     }
 }

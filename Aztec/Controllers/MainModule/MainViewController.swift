@@ -98,6 +98,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             let controller = InfoViewController()
             self?.navigationController?.pushViewController(controller, animated: true)
         }
+        cell.settingsButtonTappedHandler = { [weak self] in
+            let controller = SettingsViewController()
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
         return cell
     }
     

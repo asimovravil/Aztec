@@ -38,7 +38,7 @@ final class SplashViewController: UIViewController {
         let label = UILabel()
         label.text = "Loading..."
         label.font = UIFont(name: "Poppins-Medium", size: 32)
-        label.textColor = AppColor.white.uiColor
+        label.textColor = AppColor.whiteCustom.uiColor
         return label
     }()
     
