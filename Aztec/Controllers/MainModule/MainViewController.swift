@@ -31,37 +31,17 @@ final class MainViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var aztecLogoImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = AppImage.aztecLogo.uiImage
-        imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    private lazy var playButton: UIButton = {
-        let button = UIButton()
-        button.setImage(AppImage.playButton.uiImage, for: .normal)
-        return button
-    }()
-    
-    private lazy var fourButton: UIButton = {
-        let button = UIButton()
-        button.setImage(AppImage.fourButton.uiImage, for: .normal)
-        return button
-    }()
-    
-    private lazy var infoButton: UIButton = {
-        let button = UIButton()
-        button.setImage(AppImage.infoButton.uiImage, for: .normal)
-        button.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var settingsButton: UIButton = {
-        let button = UIButton()
-        button.setImage(AppImage.settingsButton.uiImage, for: .normal)
-        return button
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseID)
+        tableView.layer.cornerRadius = 26
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = 800
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        return tableView
     }()
     
     // MARK: - Lifecycle
@@ -77,11 +57,9 @@ final class MainViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, coinWalletImage, aztecLogoImage, playButton, fourButton, infoButton, settingsButton].forEach() {
-            contentView.addSubview($0)
+        [backgroundView, coinWalletImage, tableView].forEach() {
+            view.addSubview($0)
         }
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
     }
     
     // MARK: - setupConstraints
@@ -90,34 +68,9 @@ final class MainViewController: UIViewController {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        contentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(view)
-        }
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        aztecLogoImage.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
-        }
-        playButton.snp.makeConstraints { make in
-            make.top.equalTo(aztecLogoImage.snp.bottom).offset(97)
-            make.centerX.equalToSuperview()
-            make.bottom.equalTo(infoButton.snp.top).offset(-70)
-        }
-        fourButton.snp.makeConstraints { make in
-            make.top.equalTo(playButton.snp.bottom).offset(70)
-            make.leading.equalToSuperview().offset(24)
-        }
-        infoButton.snp.makeConstraints { make in
-            make.top.equalTo(playButton.snp.bottom).offset(70)
-            make.centerX.equalToSuperview()
-        }
-        settingsButton.snp.makeConstraints { make in
-            make.top.equalTo(playButton.snp.bottom).offset(70)
-            make.trailing.equalToSuperview().offset(-24)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
         
@@ -128,12 +81,27 @@ final class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = coinWalletBarButtonItem
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-    
-    // MARK: - Actions
-    
-    @objc private func infoButtonTapped() {
-        let controller = InfoViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
 }
 
+extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseID, for: indexPath) as? MainTableViewCell else {
+            fatalError("Could not cast to MainTableViewCell")
+        }
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        cell.infoButtonTappedHandler = { [weak self] in
+            let controller = InfoViewController()
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}

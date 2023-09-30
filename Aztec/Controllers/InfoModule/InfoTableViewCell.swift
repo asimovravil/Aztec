@@ -11,7 +11,7 @@ import SnapKit
 final class InfoTableViewCell: UITableViewCell {
 
     static let reuseID = String(describing: InfoTableViewCell.self)
-
+    
     // MARK: - UI
     
     private lazy var rulesImage: UIImageView = {

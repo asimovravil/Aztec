@@ -11,6 +11,7 @@
 		F1C65D1F2AC8452E00E414BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1C65D1E2AC8452E00E414BE /* GoogleService-Info.plist */; };
 		F1C65D222AC8479F00E414BE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D212AC8479F00E414BE /* InfoViewController.swift */; };
 		F1C65D242AC847AE00E414BE /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D232AC847AE00E414BE /* InfoTableViewCell.swift */; };
+		F1C65D262AC8533F00E414BE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D252AC8533F00E414BE /* MainTableViewCell.swift */; };
 		F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */; };
 		F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */; };
 		F1CA3EEA2AC6B5F100452810 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE92AC6B5F100452810 /* SplashViewController.swift */; };
@@ -64,6 +65,7 @@
 		F1C65D1E2AC8452E00E414BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1C65D212AC8479F00E414BE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F1C65D232AC847AE00E414BE /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		F1C65D252AC8533F00E414BE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		F1CA3EE22AC6B5F100452810 /* Aztec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aztec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C65D1C2AC8432A00E414BE /* MainViewController.swift */,
+				F1C65D252AC8533F00E414BE /* MainTableViewCell.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				F1C65D1D2AC8432A00E414BE /* MainViewController.swift in Sources */,
 				F1C65D242AC847AE00E414BE /* InfoTableViewCell.swift in Sources */,
 				F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */,
+				F1C65D262AC8533F00E414BE /* MainTableViewCell.swift in Sources */,
 				F1CA3F1B2AC6BD5C00452810 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
