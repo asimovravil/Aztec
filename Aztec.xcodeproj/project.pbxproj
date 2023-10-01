@@ -13,6 +13,9 @@
 		F1C65D242AC847AE00E414BE /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D232AC847AE00E414BE /* InfoTableViewCell.swift */; };
 		F1C65D262AC8533F00E414BE /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D252AC8533F00E414BE /* MainTableViewCell.swift */; };
 		F1C65D292AC8567000E414BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D282AC8567000E414BE /* SettingsViewController.swift */; };
+		F1C65D2C2AC946AE00E414BE /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D2B2AC946AE00E414BE /* LevelViewController.swift */; };
+		F1C65D2E2AC946BC00E414BE /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D2D2AC946BC00E414BE /* SectionType.swift */; };
+		F1C65D302AC946DE00E414BE /* LevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D2F2AC946DE00E414BE /* LevelCollectionViewCell.swift */; };
 		F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */; };
 		F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */; };
 		F1CA3EEA2AC6B5F100452810 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE92AC6B5F100452810 /* SplashViewController.swift */; };
@@ -68,6 +71,9 @@
 		F1C65D232AC847AE00E414BE /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		F1C65D252AC8533F00E414BE /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		F1C65D282AC8567000E414BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F1C65D2B2AC946AE00E414BE /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		F1C65D2D2AC946BC00E414BE /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		F1C65D2F2AC946DE00E414BE /* LevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		F1CA3EE22AC6B5F100452810 /* Aztec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aztec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +161,16 @@
 			path = SettingsModule;
 			sourceTree = "<group>";
 		};
+		F1C65D2A2AC9469900E414BE /* LevelModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C65D2B2AC946AE00E414BE /* LevelViewController.swift */,
+				F1C65D2D2AC946BC00E414BE /* SectionType.swift */,
+				F1C65D2F2AC946DE00E414BE /* LevelCollectionViewCell.swift */,
+			);
+			path = LevelModule;
+			sourceTree = "<group>";
+		};
 		F1CA3ED92AC6B5F100452810 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +215,7 @@
 				F1C65D1B2AC8430900E414BE /* MainModule */,
 				F1C65D202AC8472C00E414BE /* InfoModule */,
 				F1C65D272AC8564B00E414BE /* SettingsModule */,
+				F1C65D2A2AC9469900E414BE /* LevelModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,13 +406,16 @@
 				F1CA3EEA2AC6B5F100452810 /* SplashViewController.swift in Sources */,
 				F1CA3F082AC6B98400452810 /* AppColor.swift in Sources */,
 				F1CA3F062AC6B95600452810 /* AppImage.swift in Sources */,
+				F1C65D2C2AC946AE00E414BE /* LevelViewController.swift in Sources */,
 				F1CA3F1D2AC6BD8000452810 /* AppStorage .swift in Sources */,
 				F1C65D222AC8479F00E414BE /* InfoViewController.swift in Sources */,
 				F1CA3F542AC6BEB700452810 /* ExternalService.swift in Sources */,
+				F1C65D302AC946DE00E414BE /* LevelCollectionViewCell.swift in Sources */,
 				F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */,
 				F1C65D1D2AC8432A00E414BE /* MainViewController.swift in Sources */,
 				F1C65D242AC847AE00E414BE /* InfoTableViewCell.swift in Sources */,
 				F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */,
+				F1C65D2E2AC946BC00E414BE /* SectionType.swift in Sources */,
 				F1C65D292AC8567000E414BE /* SettingsViewController.swift in Sources */,
 				F1C65D262AC8533F00E414BE /* MainTableViewCell.swift in Sources */,
 				F1CA3F1B2AC6BD5C00452810 /* LoadingViewController.swift in Sources */,

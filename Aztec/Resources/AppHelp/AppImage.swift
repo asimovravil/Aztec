@@ -39,6 +39,7 @@ enum AppImage: String, AppImageProtocol {
     case background
     case backgroundAlpha
     case aztecLogo
+    case buttonOK
     case splashLoading
     
     // MARK: - Main
@@ -61,4 +62,24 @@ enum AppImage: String, AppImageProtocol {
     case rateUs
     case shareApp
     case privacyPolicy
+    
+    // MARK: - Levels
+    
+    case levelsImage
+    case level1
+    case level2
+    case level3
+    case level4
+    case level5
+    case level6
+    case level7
+    
+    case closeLevel100
+    case closeLevel150
+    case closeLevel200
+    case closeLevel300
+    case closeLevel500
+    case closeLevel600
+    case closeLevel700
+    case closeLevel800
 }
