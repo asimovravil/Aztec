@@ -23,6 +23,34 @@ final class LevelViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var backgroundAlphaView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.backgroundAlpha.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.isHidden = true
+        return imageView
+    }()
+    
+    private lazy var wrongLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sorry you don’t have enough Money to buy this level"
+        label.textColor = AppColor.whiteCustom.uiColor
+        label.font = UIFont(name: "Poppins-Bold", size: 32)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+    }()
+    
+    private lazy var wrongButton: UIButton = {
+        let button = UIButton()
+        button.setImage(AppImage.buttonOK.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(wrongButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        return button
+    }()
+    
     private lazy var levelsImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = AppImage.levelsImage.uiImage
@@ -39,6 +67,7 @@ final class LevelViewController: UIViewController {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
+        collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
     
@@ -74,6 +103,9 @@ final class LevelViewController: UIViewController {
         [backgroundView, levelsImage, mainCollectionView, coinWalletImage, backNavigationButton].forEach {
             view.addSubview($0)
         }
+        view.addSubview(backgroundAlphaView)
+        view.addSubview(wrongLabel)
+        view.addSubview(wrongButton)
     }
     
     // MARK: - setupConstraints
@@ -81,6 +113,19 @@ final class LevelViewController: UIViewController {
     private func setupConstraints() {
         backgroundView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        backgroundAlphaView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        wrongLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(300)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
+            make.centerX.equalToSuperview()
+        }
+        wrongButton.snp.makeConstraints { make in
+            make.top.equalTo(wrongLabel.snp.bottom).offset(24)
+            make.centerX.equalToSuperview()
         }
         levelsImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(100)
@@ -116,6 +161,15 @@ final class LevelViewController: UIViewController {
                 return self?.mainSectionLayout()
             }
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func wrongButtonTapped() {
+        mainCollectionView.isUserInteractionEnabled = true
+        self.backgroundAlphaView.isHidden = true
+        self.wrongLabel.isHidden = true
+        self.wrongButton.isHidden = true
     }
     
     // MARK: - sectionLayout
@@ -212,7 +266,10 @@ extension LevelViewController: UICollectionViewDataSource, UICollectionViewDeleg
                 // Обработка нажатия кнопки уровня здесь, если это нужно
             }
             cell.levelCloseButtonTappedHandler = {
-                
+                self.backgroundAlphaView.isHidden = false
+                self.wrongLabel.isHidden = false
+                self.wrongButton.isHidden = false
+                collectionView.isUserInteractionEnabled = false
             }
             return cell
         }

@@ -94,6 +94,10 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
+        cell.playButtonTappedHandler = { [weak self] in
+            let controller = LevelViewController()
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
         cell.infoButtonTappedHandler = { [weak self] in
             let controller = InfoViewController()
             self?.navigationController?.pushViewController(controller, animated: true)

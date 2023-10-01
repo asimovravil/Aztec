@@ -11,6 +11,7 @@ import SnapKit
 final class MainTableViewCell: UITableViewCell {
 
     static let reuseID = String(describing: MainTableViewCell.self)
+    var playButtonTappedHandler: (() -> Void)?
     var infoButtonTappedHandler: (() -> Void)?
     var settingsButtonTappedHandler: (() -> Void)?
 
@@ -27,6 +28,7 @@ final class MainTableViewCell: UITableViewCell {
     private lazy var playButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.playButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -47,7 +49,6 @@ final class MainTableViewCell: UITableViewCell {
         let button = UIButton()
         button.setImage(AppImage.settingsButton.uiImage, for: .normal)
         button.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
-
         return button
     }()
     
@@ -100,6 +101,10 @@ final class MainTableViewCell: UITableViewCell {
     }
     
     // MARK: - Actions
+    
+    @objc private func playButtonTapped() {
+        playButtonTappedHandler?()
+    }
     
     @objc private func infoButtonTapped() {
         infoButtonTappedHandler?()

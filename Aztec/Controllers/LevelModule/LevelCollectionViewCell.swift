@@ -69,6 +69,6 @@ final class LevelCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func levelCloseButtonTapped() {
-
+        levelCloseButtonTappedHandler?()
     }
 }
