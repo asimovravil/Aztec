@@ -34,6 +34,7 @@ enum AppImage: String, AppImageProtocol {
     
     // MARK: - AppImage
     
+    case cell
     case backNavigationButton
     case coinWallet
     case background
@@ -82,4 +83,15 @@ enum AppImage: String, AppImageProtocol {
     case closeLevel600
     case closeLevel700
     case closeLevel800
+    
+    // MARK: - Game
+    
+    case cellGame1
+    case cellGame2
+    case cellGame3
+    case cellGame4
+    case cellGame5
+    case cellGame6
+    case cellGame7
+    case cellGame8
 }
