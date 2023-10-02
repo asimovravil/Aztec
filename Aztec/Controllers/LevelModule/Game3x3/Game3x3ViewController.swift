@@ -12,12 +12,6 @@ final class Game3x3ViewController: UIViewController {
 
     let sections: [SectionType] = [.main]
     var selectedCellIndex: IndexPath?
-    var images: [UIImage?] = [
-        AppImage.cellGame6.uiImage,
-        AppImage.cellGame2.uiImage,
-        AppImage.cellGame3.uiImage,
-        // ...добавьте остальные изображения
-    ]
     
     // MARK: - UI
     
@@ -221,6 +215,29 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
         secondCell.imageName = tempImage
         
         self.selectedCellIndex = nil
+        checkIfPuzzleCompleted()
+    }
+    
+    private func checkIfPuzzleCompleted() {
+        let correctOrder: [AppImage] = [
+            .cellGame1,
+            .cellGame2,
+            .cellGame3,
+            .cellGame4,
+            .cellGame5,
+            .cellGame6,
+            .cellGame7,
+            .cellGame8
+        ]
+        
+        for (index, image) in correctOrder.enumerated() {
+            let cell = mainCollectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! Game3x3CollectionViewCell
+            if cell.imageName != image.uiImage {
+                return
+            }
+        }
+        let infoViewController = InfoViewController()
+        self.navigationController?.pushViewController(infoViewController, animated: true)
     }
 }
 

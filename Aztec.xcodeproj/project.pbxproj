@@ -168,6 +168,7 @@
 		F1C65D2A2AC9469900E414BE /* LevelModule */ = {
 			isa = PBXGroup;
 			children = (
+				F1C65D312AC9B4A000E414BE /* Game3x3 */,
 				F1C65D2B2AC946AE00E414BE /* LevelViewController.swift */,
 				F1C65D2D2AC946BC00E414BE /* SectionType.swift */,
 				F1C65D2F2AC946DE00E414BE /* LevelCollectionViewCell.swift */,
@@ -229,7 +230,6 @@
 				F1C65D202AC8472C00E414BE /* InfoModule */,
 				F1C65D272AC8564B00E414BE /* SettingsModule */,
 				F1C65D2A2AC9469900E414BE /* LevelModule */,
-				F1C65D312AC9B4A000E414BE /* Game3x3 */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
