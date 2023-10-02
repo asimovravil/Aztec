@@ -19,6 +19,7 @@
 		F1C65D332AC9B4CF00E414BE /* Game3x3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D322AC9B4CF00E414BE /* Game3x3ViewController.swift */; };
 		F1C65D372AC9BBC100E414BE /* Game3x3CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D362AC9BBC100E414BE /* Game3x3CollectionViewCell.swift */; };
 		F1C65D3F2ACABF8F00E414BE /* BonusGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D3E2ACABF8F00E414BE /* BonusGameViewController.swift */; };
+		F1C65D422ACAC5FB00E414BE /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65D412ACAC5FB00E414BE /* WinViewController.swift */; };
 		F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */; };
 		F1CA3EE82AC6B5F100452810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */; };
 		F1CA3EEA2AC6B5F100452810 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA3EE92AC6B5F100452810 /* SplashViewController.swift */; };
@@ -80,6 +81,7 @@
 		F1C65D322AC9B4CF00E414BE /* Game3x3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game3x3ViewController.swift; sourceTree = "<group>"; };
 		F1C65D362AC9BBC100E414BE /* Game3x3CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game3x3CollectionViewCell.swift; sourceTree = "<group>"; };
 		F1C65D3E2ACABF8F00E414BE /* BonusGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGameViewController.swift; sourceTree = "<group>"; };
+		F1C65D412ACAC5FB00E414BE /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		F1CA3EE22AC6B5F100452810 /* Aztec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aztec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CA3EE52AC6B5F100452810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CA3EE72AC6B5F100452810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,14 @@
 			path = BonusGameModule;
 			sourceTree = "<group>";
 		};
+		F1C65D402ACAC5CF00E414BE /* WinModule */ = {
+			isa = PBXGroup;
+			children = (
+				F1C65D412ACAC5FB00E414BE /* WinViewController.swift */,
+			);
+			path = WinModule;
+			sourceTree = "<group>";
+		};
 		F1CA3ED92AC6B5F100452810 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 				F1C65D272AC8564B00E414BE /* SettingsModule */,
 				F1C65D2A2AC9469900E414BE /* LevelModule */,
 				F1C65D3D2ACABF3100E414BE /* BonusGameModule */,
+				F1C65D402ACAC5CF00E414BE /* WinModule */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 				F1CA3F1D2AC6BD8000452810 /* AppStorage .swift in Sources */,
 				F1C65D222AC8479F00E414BE /* InfoViewController.swift in Sources */,
 				F1CA3F542AC6BEB700452810 /* ExternalService.swift in Sources */,
+				F1C65D422ACAC5FB00E414BE /* WinViewController.swift in Sources */,
 				F1C65D332AC9B4CF00E414BE /* Game3x3ViewController.swift in Sources */,
 				F1C65D302AC946DE00E414BE /* LevelCollectionViewCell.swift in Sources */,
 				F1CA3EE62AC6B5F100452810 /* AppDelegate.swift in Sources */,

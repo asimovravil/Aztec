@@ -36,12 +36,16 @@ enum AppImage: String, AppImageProtocol {
     
     case cell
     case backNavigationButton
+    case winBackground
     case coinWallet
     case background
     case backgroundAlpha
     case aztecLogo
     case buttonOK
     case splashLoading
+    case buttonHome
+    case buttonArrowRight
+    case buttonReturn
     
     // MARK: - Main
     
