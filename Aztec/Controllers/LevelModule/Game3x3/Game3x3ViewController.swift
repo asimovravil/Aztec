@@ -50,6 +50,30 @@ final class Game3x3ViewController: UIViewController {
         collectionView.isUserInteractionEnabled = true
         return collectionView
     }()
+    
+    private lazy var levelGameImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.levelGame.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var legsLevelImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.legsLevel.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private lazy var buttonLevelImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = AppImage.buttonLevel.uiImage
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
 
     // MARK: - Lifecycle
     
@@ -64,7 +88,7 @@ final class Game3x3ViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, backNavigationButton, coinWalletImage, mainCollectionView].forEach() {
+        [backgroundView, backNavigationButton, coinWalletImage, mainCollectionView, levelGameImage, legsLevelImage, buttonLevelImage].forEach() {
             view.addSubview($0)
         }
     }
@@ -78,6 +102,18 @@ final class Game3x3ViewController: UIViewController {
         mainCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(150)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+        levelGameImage.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(31)
+            make.bottom.equalToSuperview().offset(-80)
+        }
+        legsLevelImage.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-75)
+            make.centerX.equalToSuperview()
+        }
+        buttonLevelImage.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-24)
+            make.bottom.equalToSuperview().offset(-60)
         }
     }
 
@@ -204,18 +240,24 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCellIndex = selectedCellIndex else {
-            self.selectedCellIndex = indexPath
+            let selectedCell = collectionView.cellForItem(at: indexPath) as! Game3x3CollectionViewCell
+            if selectedCell.imageName != nil { // это новая строка кода
+                self.selectedCellIndex = indexPath
+            }
             return
         }
-        let firstCell = collectionView.cellForItem(at: selectedCellIndex) as! Game3x3CollectionViewCell
+        
         let secondCell = collectionView.cellForItem(at: indexPath) as! Game3x3CollectionViewCell
-        
-        let tempImage = firstCell.imageName
-        firstCell.imageName = secondCell.imageName
-        secondCell.imageName = tempImage
-        
-        self.selectedCellIndex = nil
-        checkIfPuzzleCompleted()
+        if secondCell.imageName == nil { // это новая строка кода
+            let firstCell = collectionView.cellForItem(at: selectedCellIndex) as! Game3x3CollectionViewCell
+            
+            let tempImage = firstCell.imageName
+            firstCell.imageName = secondCell.imageName
+            secondCell.imageName = tempImage
+            
+            self.selectedCellIndex = nil
+            checkIfPuzzleCompleted()
+        }
     }
     
     private func checkIfPuzzleCompleted() {

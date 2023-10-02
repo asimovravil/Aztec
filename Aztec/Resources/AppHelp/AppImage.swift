@@ -94,4 +94,7 @@ enum AppImage: String, AppImageProtocol {
     case cellGame6
     case cellGame7
     case cellGame8
+    case levelGame
+    case legsLevel
+    case buttonLevel
 }
