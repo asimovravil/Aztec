@@ -12,6 +12,15 @@ final class Game3x3ViewController: UIViewController {
 
     let sections: [SectionType] = [.main]
     var selectedCellIndex: IndexPath?
+    var score: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "score")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "score")
+            coinWalletLabel.text = "\(newValue)"
+        }
+    }
     
     // MARK: - UI
     
@@ -98,6 +107,7 @@ final class Game3x3ViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupNavigationBar()
+        coinWalletLabel.text = "\(score)"
     }
     
     // MARK: - setupViews
@@ -256,7 +266,7 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCellIndex = selectedCellIndex else {
             let selectedCell = collectionView.cellForItem(at: indexPath) as! Game3x3CollectionViewCell
-            if selectedCell.imageName != nil { // это новая строка кода
+            if selectedCell.imageName != nil { 
                 self.selectedCellIndex = indexPath
             }
             return
@@ -293,6 +303,9 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
                 return
             }
         }
+        
+        score += 20 
+        
         let controller = BonusGameViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }

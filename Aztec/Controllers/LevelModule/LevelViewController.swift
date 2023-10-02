@@ -111,6 +111,13 @@ final class LevelViewController: UIViewController {
         setupConstraints()
         setupNavigationBar()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let score = UserDefaults.standard.integer(forKey: "score")
+        coinWalletLabel.text = "\(score)"
+    }
 
     // MARK: - setupViews
     
