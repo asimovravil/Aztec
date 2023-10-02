@@ -97,4 +97,15 @@ enum AppImage: String, AppImageProtocol {
     case levelGame
     case legsLevel
     case buttonLevel
+    
+    // MARK: - BonusGame
+    
+    case happyStolb
+    case angryStolb
+    case bonusLogo
+    case fallLogo
+    case oldCoin
+    case tiredCoin
+    case tiredCoinButton
+    case oldCoinButton
 }
