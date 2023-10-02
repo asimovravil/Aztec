@@ -37,7 +37,7 @@ enum AppImage: String, AppImageProtocol {
     case cell
     case backNavigationButton
     case winBackground
-    case coinWallet
+    case soloCoin
     case background
     case backgroundAlpha
     case aztecLogo

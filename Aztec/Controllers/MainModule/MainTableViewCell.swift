@@ -14,6 +14,8 @@ final class MainTableViewCell: UITableViewCell {
     var playButtonTappedHandler: (() -> Void)?
     var infoButtonTappedHandler: (() -> Void)?
     var settingsButtonTappedHandler: (() -> Void)?
+    var fourButtonTappedHandler: (() -> Void)?
+
 
     // MARK: - UI
     
@@ -35,6 +37,7 @@ final class MainTableViewCell: UITableViewCell {
     private lazy var fourButton: UIButton = {
         let button = UIButton()
         button.setImage(AppImage.fourButton.uiImage, for: .normal)
+        button.addTarget(self, action: #selector(fourButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -104,6 +107,10 @@ final class MainTableViewCell: UITableViewCell {
     
     @objc private func playButtonTapped() {
         playButtonTappedHandler?()
+    }
+    
+    @objc private func fourButtonTapped() {
+        fourButtonTappedHandler?()
     }
     
     @objc private func infoButtonTapped() {

@@ -38,10 +38,25 @@ final class InfoViewController: UIViewController {
     
     private lazy var coinWalletImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = AppImage.coinWallet.uiImage
+        imageView.image = AppImage.soloCoin.uiImage
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
+    }()
+    
+    public lazy var coinWalletStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [coinWalletLabel, coinWalletImage])
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        return stackView
+    }()
+    
+    private lazy var coinWalletLabel: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.font = UIFont(name: "Poppins-Bold", size: 24)
+        label.textColor = AppColor.whiteCustom.uiColor
+        return label
     }()
     
     private lazy var tableView: UITableView = {
@@ -70,7 +85,7 @@ final class InfoViewController: UIViewController {
     // MARK: - setupViews
     
     private func setupViews() {
-        [backgroundView, backgroundAlphaView, backNavigationButton, coinWalletImage, tableView].forEach() {
+        [backgroundView, backgroundAlphaView, backNavigationButton, coinWalletStackView, tableView].forEach() {
             view.addSubview($0)
         }
     }
@@ -95,7 +110,7 @@ final class InfoViewController: UIViewController {
     private func setupNavigationBar() {
         let backButton = UIBarButtonItem(image: AppImage.backNavigationButton.uiImage, style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = backButton
-        let coinWalletBarButtonItem = UIBarButtonItem(customView: coinWalletImage)
+        let coinWalletBarButtonItem = UIBarButtonItem(customView: coinWalletStackView)
         navigationItem.rightBarButtonItem = coinWalletBarButtonItem
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
