@@ -110,7 +110,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
         cell.playButtonTappedHandler = { [weak self] in
-            let controller = LevelViewController()
+            let controller = Game3x3ViewController()
             self?.navigationController?.pushViewController(controller, animated: true)
         }
         cell.fourButtonTappedHandler = { [weak self] in
