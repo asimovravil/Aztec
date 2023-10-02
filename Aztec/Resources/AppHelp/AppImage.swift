@@ -108,4 +108,6 @@ enum AppImage: String, AppImageProtocol {
     case tiredCoin
     case tiredCoinButton
     case oldCoinButton
+    case youWrong
+    case youWin
 }
