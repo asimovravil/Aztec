@@ -59,11 +59,11 @@ final class WinViewController: UIViewController {
         }
         homeButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(90)
-            make.bottom.equalToSuperview().offset(-180)
+            make.bottom.equalToSuperview().offset(-130)
         }
         arrowRightButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-90)
-            make.bottom.equalToSuperview().offset(-180)
+            make.bottom.equalToSuperview().offset(-130)
         }
     }
     
