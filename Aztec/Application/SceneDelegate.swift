@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             } else {
                 if !AppStorage.isOnboardingShowed {
                     self?.navigation = UINavigationController(
-                        rootViewController: MainViewController()
+                        rootViewController: Game3x3ViewController()
                     )
                 }
                 self?.window?.rootViewController = self?.navigation

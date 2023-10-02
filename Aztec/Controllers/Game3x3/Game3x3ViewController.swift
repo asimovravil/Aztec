@@ -11,6 +11,13 @@ import SnapKit
 final class Game3x3ViewController: UIViewController {
 
     let sections: [SectionType] = [.main]
+    var selectedCellIndex: IndexPath?
+    var images: [UIImage?] = [
+        AppImage.cellGame6.uiImage,
+        AppImage.cellGame2.uiImage,
+        AppImage.cellGame3.uiImage,
+        // ...добавьте остальные изображения
+    ]
     
     // MARK: - UI
     
@@ -199,6 +206,21 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
         case .main:
             return 9
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedCellIndex = selectedCellIndex else {
+            self.selectedCellIndex = indexPath
+            return
+        }
+        let firstCell = collectionView.cellForItem(at: selectedCellIndex) as! Game3x3CollectionViewCell
+        let secondCell = collectionView.cellForItem(at: indexPath) as! Game3x3CollectionViewCell
+        
+        let tempImage = firstCell.imageName
+        firstCell.imageName = secondCell.imageName
+        secondCell.imageName = tempImage
+        
+        self.selectedCellIndex = nil
     }
 }
 
