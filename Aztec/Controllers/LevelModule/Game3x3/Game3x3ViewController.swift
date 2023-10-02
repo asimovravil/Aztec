@@ -248,7 +248,7 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         let secondCell = collectionView.cellForItem(at: indexPath) as! Game3x3CollectionViewCell
-        if secondCell.imageName == nil { // это новая строка кода
+        if secondCell.imageName == nil {
             let firstCell = collectionView.cellForItem(at: selectedCellIndex) as! Game3x3CollectionViewCell
             
             let tempImage = firstCell.imageName
@@ -278,8 +278,8 @@ extension Game3x3ViewController: UICollectionViewDataSource, UICollectionViewDel
                 return
             }
         }
-        let infoViewController = InfoViewController()
-        self.navigationController?.pushViewController(infoViewController, animated: true)
+        let controller = BonusGameViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

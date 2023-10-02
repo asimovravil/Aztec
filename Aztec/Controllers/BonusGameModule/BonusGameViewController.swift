@@ -161,7 +161,7 @@ final class BonusGameViewController: UIViewController {
         secondAnswerButton.isEnabled = false
         fallView.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let controller = MainViewController()
+            let controller = WinViewController()
             controller.navigationItem.hidesBackButton = true
             self.navigationController?.pushViewController(controller, animated: true)
         }
@@ -175,7 +175,7 @@ final class BonusGameViewController: UIViewController {
         fallView.isHidden = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            let controller = MainViewController()
+            let controller = WinViewController()
             controller.navigationItem.hidesBackButton = true
             self.navigationController?.pushViewController(controller, animated: true)
         }

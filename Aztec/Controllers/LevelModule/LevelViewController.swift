@@ -238,6 +238,8 @@ extension LevelViewController: UICollectionViewDataSource, UICollectionViewDeleg
             
             if levelIndex >= 1 && levelIndex <= 7 {
                 let imageName = "level\(levelIndex)"
+                cell.levelButton.setBackgroundImage(nil, for: .normal)
+                cell.levelCloseButton.isHidden = true
                 if let image = AppImage(rawValue: imageName)?.uiImage {
                     cell.levelButton.setBackgroundImage(image, for: .normal)
                 }
@@ -263,7 +265,8 @@ extension LevelViewController: UICollectionViewDataSource, UICollectionViewDeleg
             }
             
             cell.levelButtonTappedHandler = {
-                // Обработка нажатия кнопки уровня здесь, если это нужно
+                let controller = Game3x3ViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
             }
             cell.levelCloseButtonTappedHandler = {
                 self.backgroundAlphaView.isHidden = false
