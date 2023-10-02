@@ -46,6 +46,7 @@ enum AppImage: String, AppImageProtocol {
     case buttonHome
     case buttonArrowRight
     case buttonReturn
+    case gameoverBackground
     
     // MARK: - Main
     
